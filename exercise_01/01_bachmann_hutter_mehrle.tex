@@ -52,7 +52,7 @@ Let $A$,$B$ and $C$ be arbitrary sets. Let $x$ be an element in $(A \cap B) \cup
 
 \begin{proof}
 Let $A$ and $B$ be arbitrary sets. We want to show that if $(A \cap B) = \emptyset$, then $A \setminus B = A$. We argue by contradiction, so we assume that $(A \setminus B) \neq A$.
-By definition $A \setminus B \subseteq A$, so $A 	\not\subseteq A \setminus B$. To fulfill this definition, there must be a an $x \in A \cup B$. 
+By definition $A \setminus B \subseteq A$, so $A 	\not\subseteq A \setminus B$ or else we would have an equality. Therefore there must exist an $x$ which is element in $A$ but not in $A \setminus B$, i.e. $x \in A \cap B$. But this means that $A \cap B$ is not empty. This is the wanted contradiction.
 
 
 \end{proof}
