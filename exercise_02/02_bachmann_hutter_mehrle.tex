@@ -33,8 +33,6 @@
 %% Page style that uses the header
 \pagestyle{fancy}
 
-\newcommand\Circle[1][1.5]{\tikz[baseline=-#1]{\draw[thick](0,0.1)circle[radius=#1mm];}}
-
 \newcommand{\authorname}{Nico Bachmann\\Ruben Hutter\\Lina Mehrle}
 \newcommand{\semester}{Fall Semester 2023}
 \newcommand{\course}{Discrete Mathematics in Computer Science}
@@ -46,10 +44,11 @@
 \section*{Exercise \homeworkNumber.1}
 
 \begin{proof}
-We use a mathematical induction over n. \newline
+We want to proof that \[\sum_{i=0}^{n} i = \frac{n \cdot (n+1)}{2} \text{ for all } n \in \mathbb{N}_0 \] using mathematical induction over n.\newline
+\newline
 Induction basis $n = 0$: 
 \[ \sum_{i=0}^{0} i = 0 = \frac{0 \cdot(0+1)}{2} \]
-IH: \[ \sum_{i=0}^{n} i = \frac{n \cdot (n+1)}{2}\]
+IH: \[ \sum_{i=0}^{k} i = \frac{k \cdot (k+1)}{2} \text{ for all } 0 \leq k \leq n\]
 Induction step $n \rightarrow n+1$:
 \begin{align*}
 \sum_{i=0}^{n+1} i & = \left( \sum_{i=0}^{n} i \right) + (n+1) \\
@@ -62,15 +61,17 @@ Induction step $n \rightarrow n+1$:
 \section*{Exercise \homeworkNumber.2}
 
 \begin{proof}
+We want to show that $edges(B) = 2 \cdot leaves(B) -2$ for all binary trees B with a weak induction.\newline
 Induction basis: \[ edges(\square) = 0 = 2 \cdot 1 - 2 = 2 \cdot leaves(\square) - 2 \]
-IH: to prove that the statement is true for a composite tree $\langle L, \Circle ,R  \rangle$, we may use that it is true for the subtrees $L$ and $R$.\newline
-Inductive step for $B = \langle L, \Circle ,R \rangle$:
+IH: To prove that the statement is true for a composite tree $\langle L, \bigcirc ,R  \rangle$, we may use that it is true for the subtrees $L$ and $R$.\newline
+Inductive step for $B = \langle L, \bigcirc ,R \rangle$:
 \begin{align*}
-edges(B) & = edges(\langle L, \Circle ,R \rangle) \\
+edges(B) & = edges(\langle L, \bigcirc ,R \rangle) \\
 & = edges(L) + edges(R) + 2 \\
 & \stackrel{IH}{=} 2 \cdot leaves(L) - 2 + 2 \cdot leaves(R) - 2 + 2 \\
 & = 2 \cdot (leaves(L) + leaves(R)) - 2 \\
-& = 2 \cdot leaves(\langle L, \Circle ,R \rangle) - 2
+& = 2 \cdot leaves(\langle L, \bigcirc ,R \rangle) - 2 \\
+& = 2 \cdot leaves(B) - 2
 \end{align*}
 \end{proof}
 
@@ -78,15 +79,39 @@ edges(B) & = edges(\langle L, \Circle ,R \rangle) \\
 \section*{Exercise \homeworkNumber.3}
 
 \begin{proof}
-
+We want to show that all words in $S$ have odd length with structural induction.\newline
+Induction basis: $c$ and $baa$ both have odd length.
+IH: To prove the statement is true for composite words $xyx$ and $bxb$, we may use that it is true for the words $x$ and $y$. \newline
+Inductive step: By the definition of the set $S$, every word in $z \in S$ (that is not $c$ or $baa$) either has the form $xyx$ or $bxb$ for words $x,y \in S$. We make a case distinction. \newline
+Case 1: $z = xyx$ \newline
+Since by the IH $x$ and $y$ have odd length, $xyx$ also has odd length since the addition of three odd numbers returns an odd number. \newline
+Case 2: $z = bxb$ \newline
+Since by the IH $x$ has odd length, $bxb$ also has odd length since adding two to an odd number returns an odd number.
 \end{proof}
 
 \section*{Exercise \homeworkNumber.4}
 
-\begin{proof}
- 
-\end{proof}
+\begin{enumerate}
+
+\item[(a)] $\{2n \mid n \in \mathbb{N}, n < 10\}$
+
+\item[(b)] $\mathbb{N} \setminus \{6\}$
+
+\end{enumerate}
+
 
 \section*{Excercise \homeworkNumber.5}
+
+\begin{enumerate}
+
+\item[(a)] $A = \set{1,3}, B = \set{1,3,5,6,8,9,10}$
+\item[(b)] $A = \emptyset, B = \set{3,5}$
+\item[(c)] $A = \set{6,8,9}, B = \set{6,8,9}$
+
+
+
+\end{enumerate}
+
+
 
 \end{document}
