@@ -1,0 +1,108 @@
+
+%% General definitions
+\documentclass{article} %% Determines the general format.
+\usepackage{a4wide} %% paper size: A4.
+\usepackage[utf8]{inputenc} %% This file is written in UTF-8.
+%% Some editors on Windows cannot save files in UTF-8.
+%% If there is a problem with special characters not showing up
+%% correctly, try switching "utf8" to "latin1" (ISO 8859-1).
+\usepackage[T1]{fontenc} %% Format of hte resulting PDF file.
+\usepackage{fancyhdr} %% Package to create a header on each page.
+\usepackage{lastpage} %% Used for "Page X of Y" in the header.
+											%% For this to work, you have to call pdflatex twice.
+\usepackage{enumerate} %% Used to change the style of enumerations (see below).
+
+\usepackage{amssymb} %% Definitions for math symbols.
+\usepackage{amsmath} %% Definitions for math symbols.
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+
+\usepackage{tikz}  %% Pagacke to create graphics (graphs, automata, etc.)
+\usetikzlibrary{automata} %% Tikz library to draw automata
+\usetikzlibrary{arrows}   %% Tikz library for nicer arrow heads
+
+
+%% Left side of header
+\lhead{\course\\\semester\\Exercise \homeworkNumber}
+%% Right side of header
+\rhead{\authorname\\Page \thepage\ of \pageref{LastPage}}
+%% Height of Header
+\usepackage[headheight=36pt]{geometry}
+%% Page style that uses the header
+\pagestyle{fancy}
+
+\newcommand{\authorname}{Nico Bachmann\\Ruben Hutter\\Lina Mehrle}
+\newcommand{\semester}{Fall Semester 2023}
+\newcommand{\course}{Discrete Mathematics in Computer Science}
+\newcommand{\homeworkNumber}{5}
+
+
+\begin{document}
+
+\section*{Exercise \homeworkNumber.1}
+
+\begin{enumerate}[a)]
+	\item The Cartesian product of a set with the $\emptyset$ is the set itself.\\ The equation is correct if: $\set{2, 3} \times \emptyset = \set{\langle 2, \emptyset \rangle, \langle 3, \emptyset \rangle}$
+	
+	\item The right side should be: $\set{\langle \langle 1,0 \rangle , 0 \rangle}$
+	
+	\item Tuples are ordered. We can swap tuples inside the set, but not items inside the tuple.
+	
+	\item The Tuple $\langle 2,4 \rangle$ is element of the cartesian product but not the set $\set{2,4}$.
+	
+	
+	
+\end{enumerate}
+
+\section*{Exercise \homeworkNumber.2}
+
+\begin{enumerate}[a)]
+
+\item $A = B = \set{3,5,6}$
+
+\item $A = \set{1,6}$, $B = \set{1,4,5}$
+
+\end{enumerate}
+
+
+
+
+\section*{Exercise \homeworkNumber.3}
+
+\begin{enumerate}
+\item $R_1 = \set{\langle a,a \rangle, \langle b,c \rangle, \langle c,b \rangle}$
+
+\item This is not possible. Since the set $R_2$ contains $\langle a,b \rangle$ it also needs to contain $\langle b,a \rangle$ because of symmetry which means it also has to contain $\langle a,a \rangle$ and $\langle b,b \rangle$ because of transitivity so it can not be irreflexive because $\langle a,a \rangle$ and $\langle b,b \rangle$ would be in $R_2$.
+
+\end{enumerate}
+
+\section*{Exercise \homeworkNumber.4}
+\begin{enumerate}[-]
+\item The set $R$ is reflexive because you can choose $j = 1$ which creates all possible tuples of the type $\langle a, a \rangle$.
+
+\item The set $R$ is not irreflexive because it is already reflexive as shown in the step before.
+
+\item The set $R$ is not symmetric because $\langle 1, 2 \rangle$ is possible with $i = 1$, $j = 2$ but $\langle 2, 1 \rangle$ is not possible because we would have to choose $i = 2$, $j = 0.5$ and $0.5 \notin \mathbb{N}_0$.
+
+\item The set $R$ is not asymmetric since it is reflexive.
+
+\item The set $R$ is antisymmetric: \newline
+Case 1: $j = 0$ \newline 
+The right element will always be 0 but not the left element.
+However, elements of the form $\langle 0, a \rangle$ where $a \neq 0$ are not possible.
+
+
+Case 2: $j \neq 0$ \newline The left element is always smaller than the right element so the other way around is not possible since j would have to be $0 < j < 1$.
+
+\item The set $R$ is transitive. Let $\langle i, j \cdot i \rangle$ for some $i,j \in \mathbb{N}$ be an arbitrary element in $R$ and  
+$\langle i \cdot j, j \cdot i \cdot k \rangle$ for some $k \in \mathbb{N}$ another element in $R$. Then 
+$\langle i, j \cdot i \cdot k \rangle$ is also in $R$ since we can write it as $\langle i, l \cdot i \rangle$ with $l = j \cdot k \in \mathbb{N}$.
+
+
+\end{enumerate}
+
+
+\end{document}
