@@ -45,15 +45,19 @@
 \section*{Exercise \homeworkNumber.1}
 
 \begin{enumerate}[a)]
-	\item The Cartesian product of a set with the $\emptyset$ is the set itself.\\ The equation is correct if: $\set{2, 3} \times \emptyset = \set{\langle 2, \emptyset \rangle, \langle 3, \emptyset \rangle}$
+
+	\item There are 5 equivalence relations over the set $M = \set{a,b,c}$.
 	
-	\item The right side should be: $\set{\langle \langle 1,0 \rangle , 0 \rangle}$
+	\begin{enumerate}[]
+		\item $\sim = \set{\langle a, a \rangle, \langle b, b \rangle, \langle c, c \rangle}$
+		\item $\sim = \set{\langle a, a \rangle, \langle b, b \rangle, \langle c, c \rangle, \langle a, b \rangle, \langle b, a \rangle}$
+		\item $\sim = \set{\langle a, a \rangle, \langle b, b \rangle, \langle c, c \rangle, \langle a, c \rangle, \langle c, a \rangle}$
+		\item $\sim = \set{\langle a, a \rangle, \langle b, b \rangle, \langle c, c \rangle, \langle c, b \rangle, \langle b, c \rangle}$
+		\item $\sim = \set{\langle a, a \rangle, \langle b, b \rangle, \langle c, c \rangle, \langle a, b \rangle, \langle b, a \rangle, \langle a, c \rangle, \langle c, a \rangle, \langle c, b \rangle, \langle b, c \rangle}$
+		
+	\end{enumerate}
 	
-	\item Tuples are ordered. We can swap tuples inside the set, but not items inside the tuple.
-	
-	\item The Tuple $\langle 2,4 \rangle$ is element of the cartesian product but not the set $\set{2,4}$.
-	
-	
+	\item $[a]_\sim = \set{a}$, $[b]_\sim = \set{b,d}$, $[c]_\sim = \set{c,e}$
 	
 \end{enumerate}
 
@@ -61,48 +65,68 @@
 
 \begin{enumerate}[a)]
 
-\item $A = B = \set{3,5,6}$
+\item \begin{proof}
 
-\item $A = \set{1,6}$, $B = \set{1,4,5}$
+Let $x$ be an arbitrary element in $S$. Since an equivalence relation is reflexive, we have $\langle x,x \rangle \in \sim$ which means that $x \in [x]_\sim \subseteq E$.
 
+\end{proof}
+
+\item \begin{proof}
+
+We will do a proof by contradiction. Let $x,y,z$ be arbitrary elements in $S$ and assume that $x \in [y]_\sim$ and $x \in [z]_\sim$ but $[y]_\sim \neq [z]_\sim$.
+
+Since $x \in [y]_\sim$ we have that $\langle y,x \rangle \in \sim$.
+Since $x \in [z]_\sim$ we have that $\langle z,x \rangle \in \sim$ and since an equivalence relation is symmetric we also have that $\langle x,z \rangle \in \sim$.
+
+Because an equivalence relation is also transitive, we have $\langle y,z \rangle \in \sim$. \newline
+We now claim that $[y]_\sim = [z]_\sim$ if $\langle y,z \rangle \in \sim$. This would be the needed contradiction to finish the proof. \newline
+Proof of the claim: Let $a \in [y]_\sim$ be arbitrary. Then $\langle a, y \rangle \in \sim$ and thus $\langle a,z \rangle \in \sim$ since $\langle y,z \rangle \in \sim$ i.e. $a \in [z]_\sim$. Thus $[y]_\sim \subseteq [z]_\sim$. Analogously $[z]_\sim \subseteq [y]_\sim$. But this means that $[y]_\sim = [z]_\sim$.
+
+\end{proof}
 \end{enumerate}
-
-
 
 
 \section*{Exercise \homeworkNumber.3}
 
-\begin{enumerate}
-\item $R_1 = \set{\langle a,a \rangle, \langle b,c \rangle, \langle c,b \rangle}$
-
-\item This is not possible. Since the set $R_2$ contains $\langle a,b \rangle$ it also needs to contain $\langle b,a \rangle$ because of symmetry which means it also has to contain $\langle a,a \rangle$ and $\langle b,b \rangle$ because of transitivity so it can not be irreflexive because $\langle a,a \rangle$ and $\langle b,b \rangle$ would be in $R_2$.
-
-\end{enumerate}
+$R = \set{\langle a,a \rangle, \langle b,b \rangle, \langle c,c \rangle, \langle d,d \rangle, \langle a,b \rangle, \langle c,b \rangle}$
+\newline
+\newline
+\noindent
+Our relation $R$ is a partial order because it is reflexive, antisymmetric and transitive. It is reflexive because $\langle x,x \rangle \in R$ for all $x \in S$, antisymmetric because $\langle a,b \rangle \in R$ but $\langle b,a \rangle
+\notin R$, similarly for $\langle c,b \rangle$ and transitive because $\langle a,b \rangle \in R$ but $b$ does not relate something else except itself and similarly for $\langle c,b \rangle$.
+\newline
+\newline
+\noindent
+Our minimal elements are $a$ and $c$.
+\newpage
 
 \section*{Exercise \homeworkNumber.4}
-\begin{enumerate}[-]
-\item The set $R$ is reflexive because you can choose $j = 1$ which creates all possible tuples of the type $\langle a, a \rangle$.
 
-\item The set $R$ is not irreflexive because it is already reflexive as shown in the step before.
+\begin{enumerate}[a)]
+\item False. It should be [...] \emph{at least} one of xRy and yRx (so possible also both) is true [...].
+\item You can always take the relation $R = \emptyset$. This way all $x \in S$ stand in no relation to each other and are therefore each a maximum and minimum.
+\end{enumerate}
 
-\item The set $R$ is not symmetric because $\langle 1, 2 \rangle$ is possible with $i = 1$, $j = 2$ but $\langle 2, 1 \rangle$ is not possible because we would have to choose $i = 2$, $j = 0.5$ and $0.5 \notin \mathbb{N}_0$.
+\section*{Exercise \homeworkNumber.5}
 
-\item The set $R$ is not asymmetric since it is reflexive.
+\begin{enumerate}[a)]
 
-\item The set $R$ is antisymmetric: \newline
-Case 1: $j = 0$ \newline 
-The right element will always be 0 but not the left element.
-However, elements of the form $\langle 0, a \rangle$ where $a \neq 0$ are not possible.
+\item $A^{-1} = \set{\langle 2x, x \rangle \mid x \in \mathbb{N}_0}$
 
+\item $B \setminus A^{-1} = \set{\langle i \cdot x, x \rangle \mid i,x \in \mathbb{N}_0, i \neq 2}$
 
-Case 2: $j \neq 0$ \newline The left element is always smaller than the right element so the other way around is not possible since j would have to be $0 < j < 1$.
+\item $C \circ A = \set{\langle 2,2 \rangle, \langle 2,7 \rangle, \langle 3,4 \rangle , \langle 4,2 \rangle}$
 
-\item The set $R$ is transitive. Let $\langle i, j \cdot i \rangle$ for some $i,j \in \mathbb{N}$ be an arbitrary element in $R$ and  
-$\langle i \cdot j, j \cdot i \cdot k \rangle$ for some $k \in \mathbb{N}$ another element in $R$. Then 
-$\langle i, j \cdot i \cdot k \rangle$ is also in $R$ since we can write it as $\langle i, l \cdot i \rangle$ with $l = j \cdot k \in \mathbb{N}$.
+\item $A \circ (A \circ A) = \set{\langle x, 8x \rangle \mid x \in \mathbb{N}_0}$
 
+\item $A^* = \set{\langle x, 2^{n} \cdot x \rangle \mid x,n \in \mathbb{N}_0}$
+
+\item $A \circ B = \set{\langle i \cdot x, 2x \rangle \mid i,x \in \mathbb{N}_0}$
 
 \end{enumerate}
+
+
+
 
 
 \end{document}
