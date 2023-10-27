@@ -410,3 +410,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/java,latex,macos,windows,linux
+
+# Ignore PDFs except sheet
+*.pdf
+!sheet*.pdf
