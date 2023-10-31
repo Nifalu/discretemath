@@ -414,3 +414,4 @@ $RECYCLE.BIN/
 # Ignore PDFs except sheet
 *.pdf
 !sheet*.pdf
+!enigma.pdf
