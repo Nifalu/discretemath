@@ -1,0 +1,99 @@
+
+%% General definitions
+\documentclass{article} %% Determines the general format.
+\usepackage{a4wide} %% paper size: A4.
+\usepackage[utf8]{inputenc} %% This file is written in UTF-8.
+%% Some editors on Windows cannot save files in UTF-8.
+%% If there is a problem with special characters not showing up
+%% correctly, try switching "utf8" to "latin1" (ISO 8859-1).
+\usepackage[T1]{fontenc} %% Format of hte resulting PDF file.
+\usepackage{fancyhdr} %% Package to create a header on each page.
+\usepackage{lastpage} %% Used for "Page X of Y" in the header.
+											%% For this to work, you have to call pdflatex twice.
+\usepackage{enumerate} %% Used to change the style of enumerations (see below).
+
+\usepackage{amssymb} %% Definitions for math symbols.
+\usepackage{amsmath} %% Definitions for math symbols.
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+
+\usepackage{tikz}  %% Pagacke to create graphics (graphs, automata, etc.)
+\usetikzlibrary{automata} %% Tikz library to draw automata
+\usetikzlibrary{arrows}   %% Tikz library for nicer arrow heads
+
+
+%% Left side of header
+\lhead{\course\\\semester\\Exercise \homeworkNumber}
+%% Right side of header
+\rhead{\authorname\\Page \thepage\ of \pageref{LastPage}}
+%% Height of Header
+\usepackage[headheight=36pt]{geometry}
+%% Page style that uses the header
+\pagestyle{fancy}
+
+\newcommand{\authorname}{Nico Bachmann\\Ruben Hutter\\Lina Mehrle}
+\newcommand{\semester}{Fall Semester 2023}
+\newcommand{\course}{Discrete Mathematics in Computer Science}
+\newcommand{\homeworkNumber}{6}
+
+
+\begin{document}
+
+\section*{Exercise \homeworkNumber.1}
+
+dom($f$): $\mathbb{N}$\newline
+img($f$): $f = \set{n \in \mathbb{N} \mid n \equiv 0 \text{ (mod 3)}}$
+
+
+\section*{Exercise \homeworkNumber.2}
+
+\begin{equation}
+f(p) = \begin{cases}
+		v & \text{if } p = 0,1\\
+		x & \text{if } p = 4\\
+		y & \text{if } p = 2\\
+		z & \text{if } p = 5\\
+	\end{cases}
+\end{equation}
+
+\section*{Exercise \homeworkNumber.3}
+
+Let $A = \set{0}$, $B = \set{0, 1}$, $C = \set{0}$
+
+\begin{equation}
+f(0) = 0
+\end{equation}
+\begin{equation}
+g(0) = g(1) = 0
+\end{equation}
+\noindent
+$g$ is not injective because both $0$ and $1$ point to $0$. However $g \circ f$ is still injective because $1$ is not in the image of $f$.
+
+
+
+\section*{Exercise \homeworkNumber.4}
+
+Lina's pretty proof
+
+\section*{Exercise \homeworkNumber.5}
+
+\begin{enumerate}[a)]
+
+\item $ P \circ C = \set{A \mapsto 4, B \mapsto 3, C \mapsto 2, D \mapsto 1, E \mapsto 5}$
+
+\item $ R_1 = \set{1 \mapsto 1, 2 \mapsto 3, 3 \mapsto 4, 4 \mapsto 5, 5 \mapsto 2} $
+
+\item \verb|EC|
+
+
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
