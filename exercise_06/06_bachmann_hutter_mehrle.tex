@@ -44,8 +44,8 @@
 
 \section*{Exercise \homeworkNumber.1}
 
-dom($f$): $\mathbb{N}$\newline
-img($f$): $f = \set{n \in \mathbb{N} \mid n \equiv 0 \text{ (mod 3)}}$
+$dom(f) = \mathbb{N}$\newline
+$img(f) = \set{n \in \mathbb{N} \mid n \equiv 0 \text{ (mod 3)}}$
 
 
 \section*{Exercise \homeworkNumber.2}
@@ -76,7 +76,14 @@ $g$ is not injective because both $0$ and $1$ point to $0$. However $g \circ f$ 
 
 \section*{Exercise \homeworkNumber.4}
 
-Lina's pretty proof
+\begin{proof}
+We will show that f is bijective by separately proving that f is injective and surjective. \newline 
+Step 1: Show that f is injective by contradiction. \newline
+Let $x,y \in A$ such that $x \neq y$ and $f(x) = f(y)$. But then $x = g(f(x)) = g(f(y)) = y$ since by assumption $g(f(z)) = z$ for all $z \in A$. This is a contradiction to $x \neq y$. \newline
+Step 2: Show that f is surjective by contradiction. \newline
+Assume there is an $y \in B$ such that $y \notin img(f)$. Since $h: B \rightarrow A$ is a (total) function, there is an element $x \in A$ such that $h(y) = x$. But this means that $y = f(h(y)) = f(x)$ which is a contradiction to $y \notin img(f)$.
+
+\end{proof}
 
 \section*{Exercise \homeworkNumber.5}
 
