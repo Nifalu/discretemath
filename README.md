@@ -1,2 +1,2 @@
 # discretemath
-whack
+easy peasy lemon squeezy
