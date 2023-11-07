@@ -44,11 +44,39 @@
 
 \section*{Exercise \homeworkNumber.1}
 
+\begin{enumerate}[(a)]
+\item \begin{proof}
+We disprove this by giving a counter example. Let $a = 5$, $b = c = 10$ then $5 \mid 10$ and $10 \mid 10$ but not $50 \mid 10$.
 
+\end{proof}
 
+\item \begin{proof}
+For the proof we use the theorem "linear combinations" from the lecture. If $a \mid b$ and $a \mid b-c$ then by taking $x = 1$ and $y = -1$ in the theorem we get that $a \mid b - (b-c) = c$.
+
+\end{proof}
+
+\end{enumerate}
 
 \section*{Exercise \homeworkNumber.2}
 
+\begin{enumerate}[(a)]
+\item \begin{proof}
+This is true analogously to (b). Here we use that scaling by k is just an addition k times and we know that congruence modulo n is compatible with addition.
+\end{proof}
+\item \begin{proof} We assume that $a \mid b$ (mod n) and we want to show that $a^k \equiv b^k$ (mod n) is true for all $k \in \mathbb{N}_{0}$.
+
+\begin{enumerate}[-]
+\item Induction basis $m = 0$: $a^0 = 1 \equiv 1 = b^0$ (mod n).
+\item Induction hypothesis: $a^k \equiv b^k$ (mod n) is true for all $k \in [0,m]$
+\item Induction step $m \rightarrow m + 1$: We want to show that $a^{m+1} \equiv b^{m+1}$ (mod n).
+\[
+a^{m+1} \equiv a^m \cdot a \stackrel{(*)}{\equiv} b \cdot b^m \equiv b^{m+1}
+\]
+(*) holds because of IH, $a \equiv b$ (mod n) by assumption and since congruence modulo n is compatible with multiplication.
+\end{enumerate}
+
+\end{proof}
+\end{enumerate}
 
 
 \section*{Exercise \homeworkNumber.3}
@@ -57,11 +85,22 @@
 
 \section*{Exercise \homeworkNumber.4}
 
+$G = (\set{H,I,J,K,L,M,N},\set{\set{J,M}, \set{H,K}, \set{J,K}, \set{N,K}, \set{M,K}, \set{L,K}, \set{N,M}, \set{L,M}})$
 
 \section*{Exercise \homeworkNumber.5}
 
 \begin{enumerate}[a)]
-\item
+\item $\langle D, B, C, B, A, B \rangle$
+
+\item $\langle A, B, C \rangle$ \\ 
+$\langle C, B, A \rangle$ \\
+$\langle D, B, A \rangle$ \\
+$\langle D, B, C \rangle$
+
+\item $\langle A, B, C, B, A \rangle$
+
+\item zero
+
 
 \end{enumerate}
 
