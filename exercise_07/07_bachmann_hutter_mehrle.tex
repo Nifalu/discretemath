@@ -81,7 +81,7 @@ a^{m+1} \equiv a^m \cdot a \stackrel{(*)}{\equiv} b \cdot b^m \equiv b^{m+1}
 
 \section*{Exercise \homeworkNumber.3}
 \begin{center}
-\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+\begin{tikzpicture}[node distance={25mm}, main/.style = {draw, circle}] 
 \node[main] (A) {$A$};
 \node[main] (B) [above of=A] {$B$}; 
 \node[main] (C) [right of=B] {$C$}; 
@@ -89,13 +89,13 @@ a^{m+1} \equiv a^m \cdot a \stackrel{(*)}{\equiv} b \cdot b^m \equiv b^{m+1}
 \node[main] (E) [below of=D] {$E$};
 \node[main] (F) [below of=C] {$F$};
 
-\draw[->] (A) -- (B);
-\draw[->] (C) -- (B);
-\draw[->] (C) -- (D);
-\draw[->] (C) -- (F);
-\draw[->] (D) -- (E);
-\draw[->] (E) -- (C);
-\draw[->] (F) -- (C);
+\draw[->] (A) to (B);
+\draw[->] (C) to (B);
+\draw[->] (C) to (D);
+\draw[->] (C) to [out=225,in=135,looseness=1] (F);
+\draw[->] (D) to (E);
+\draw[->] (E) to (C);
+\draw[->] (F) to (C);
 
 
 
@@ -105,6 +105,29 @@ a^{m+1} \equiv a^m \cdot a \stackrel{(*)}{\equiv} b \cdot b^m \equiv b^{m+1}
 \section*{Exercise \homeworkNumber.4}
 
 $G = (\set{H,I,J,K,L,M,N},\set{\set{J,M}, \set{H,K}, \set{J,K}, \set{N,K}, \set{M,K}, \set{L,K}, \set{N,M}, \set{L,M}})$
+
+\begin{center}
+\begin{tikzpicture}[node distance={25mm}, main/.style = {draw, circle}] 
+
+\node[main] (K) {$K$};
+\node[main] (H) [below right of=K]{$H$};
+\node[main] (J) [above right of=K] {$J$}; 
+\node[main] (L) [left of=K] {$L$};
+\node[main] (M) [above left of=K] {$M$};
+\node[main] (N) [below left of=K] {$N$};
+\node[main] (I) [below right of=J] {$I$};
+
+\draw (J) to (M);
+\draw (H) to (K);
+\draw (J) to (K);
+\draw (N) to (K);
+\draw (M) to (K);
+\draw (L) to (K);
+\draw (N) to [out=155,in=205,looseness=1.2] (M);
+\draw (L) to (M);
+
+\end{tikzpicture} 
+\end{center}
 
 \section*{Exercise \homeworkNumber.5}
 
