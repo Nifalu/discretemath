@@ -80,9 +80,28 @@ a^{m+1} \equiv a^m \cdot a \stackrel{(*)}{\equiv} b \cdot b^m \equiv b^{m+1}
 
 
 \section*{Exercise \homeworkNumber.3}
+\begin{center}
+\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+\node[main] (A) {$A$};
+\node[main] (B) [above of=A] {$B$}; 
+\node[main] (C) [right of=B] {$C$}; 
+\node[main] (D) [right of=C] {$D$}; 
+\node[main] (E) [below of=D] {$E$};
+\node[main] (F) [below of=C] {$F$};
+
+\draw[->] (A) -- (B);
+\draw[->] (C) -- (B);
+\draw[->] (C) -- (D);
+\draw[->] (C) -- (F);
+\draw[->] (D) -- (E);
+\draw[->] (E) -- (C);
+\draw[->] (F) -- (C);
 
 
 
+\end{tikzpicture} 
+\end{center}
+\newpage
 \section*{Exercise \homeworkNumber.4}
 
 $G = (\set{H,I,J,K,L,M,N},\set{\set{J,M}, \set{H,K}, \set{J,K}, \set{N,K}, \set{M,K}, \set{L,K}, \set{N,M}, \set{L,M}})$
