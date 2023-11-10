@@ -1,2 +1,2 @@
 # discretemath
-easy peasy lemon squeezy
+easy peasy lemon squeezy.
